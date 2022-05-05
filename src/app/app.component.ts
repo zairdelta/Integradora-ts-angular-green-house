@@ -1,10 +1,14 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import * as AOS from 'aos'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'test2';
+export class AppComponent implements OnInit {
+  title = 'EXAMEN_JUEGO_INTERFAZ';
+  ngOnInit(): void {
+    AOS.init();
+    window.addEventListener('load',AOS.refresh)
+  }
 }

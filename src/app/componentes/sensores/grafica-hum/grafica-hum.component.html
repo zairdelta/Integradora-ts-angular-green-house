@@ -1,0 +1,26 @@
+
+      <div style="margin-bottom: 0; border-bottom: 2px solid #f2f2f2;border-top: 2px solid #f2f2f2; display: flex;align-items: center;justify-content: center;">
+
+      <div #containerRef style="width: 95%;padding:0;margin: 0;">
+
+      <ngx-charts-line-chart
+      [view]="[containerRef.offsetWidth, 400]"
+      [legend]="legend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxis]="xAxis"
+      [yAxis]="yAxis"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      [timeline]="timeline"
+      [results]="multi"
+      (select)="onSelect($event)"
+      (activate)="onActivate($event)"
+      (deactivate)="onDeactivate($event)"
+      >
+    </ngx-charts-line-chart>
+
+      </div>
+
+    </div>
+<br><br>

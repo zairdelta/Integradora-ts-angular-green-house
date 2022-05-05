@@ -1,0 +1,156 @@
+<div class="body">
+  <div class="sidebar"  [class.close]="!isOpenSidebar">
+    <div class="logo-details">
+     <img src="https://imgur.com/WiAVWdD.jpg" alt="">
+      <span class="logo_name">CodeDevs</span>
+    </div>
+    <ul class="nav-links">
+      <li (click)="permission()" >
+        <a >
+          <i class='bx bx-lock-alt'></i>
+          <span class="link_name">Security</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Security</a></li>
+        </ul>
+      </li>
+      <!-- <li [class.showMenu]="!isOpenOptions3" >
+        <div (click)="isOpenOptions3=!isOpenOptions3" class="iocn-link">
+          <a href="#">
+            <i class='bx bx-collection' ></i>
+            <span class="link_name">Security</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Category</a></li>
+          <li><a href="#">HTML & CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">PHP & MySQL</a></li>
+        </ul>
+      </li> -->
+      <!-- <li [class.showMenu]="!isOpenOptions2">
+        <div (click)="isOpenOptions2=!isOpenOptions2" class="iocn-link">
+          <a href="#">
+            <i class='bx bx-book-alt' ></i>
+            <span class="link_name">Posts</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Posts</a></li>
+          <li><a href="#">Web Design</a></li>
+          <li><a href="#">Login Form</a></li>
+          <li><a href="#">Card Design</a></li>
+        </ul>
+      </li> -->
+      <!-- <li (click)="comments()">
+        <a >
+          <i class='bx bx-envelope'></i>
+          <span class="link_name">Comments</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" >Comments</a></li>
+        </ul>
+      </li> -->
+      <li (click)="notes()">
+        <a >
+          <i class='bx bx-message-alt-detail'></i>
+          <span class="link_name">Notes</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name">Notes</a></li>
+        </ul>
+      </li>
+      <!-- <li [class.showMenu]="!isOpenOptions" >
+        <div (click)="toggleOptions()" class="iocn-link">
+          <a href="#">
+            <i class='bx bx-plug' ></i>
+            <span class="link_name">Plugins</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Plugins</a></li>
+          <li><a href="#">UI Face</a></li>
+          <li><a href="#">Pigments</a></li>
+          <li><a href="#">Box Icons</a></li>
+        </ul>
+      </li> -->
+      <!-- <li>
+        <a href="#">
+          <i class='bx bx-compass' ></i>
+          <span class="link_name">Explore</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Explore</a></li>
+        </ul>
+      </li> -->
+      <li (click)="history()">
+        <a >
+          <i class='bx bx-history'></i>
+          <span class="link_name">History</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name">History</a></li>
+        </ul>
+      </li>
+      <!-- <li>
+        <a href="#">
+          <i class='bx bx-cog' ></i>
+          <span class="link_name">Setting</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Setting</a></li>
+        </ul>
+      </li> -->
+      <li>
+    <div class="profile-details">
+      <div class="profile-content">
+        <img src="{{resp?.url_foto}}" alt="profileImg">
+      </div>
+      <div class="name-job">
+        <div class="profile_name">{{resp?.username}}</div>
+        <div class="job">Web Desginer</div>
+      </div>
+      <i (click)="logout()"  class='bx bx-log-out' ></i>
+    </div>
+  </li>
+</ul>
+  </div>
+  <section class="home-section">
+    <div class="home-content">
+      <i (click)="toggleSidebar()" class='bx bx-menu' ></i>
+      <span class="text">Open Sidebar</span>
+    </div>
+      <app-permissions *ngIf="select==4"></app-permissions>
+      <app-contacto *ngIf="select==1"></app-contacto>
+      <app-notes *ngIf="select==2"></app-notes>
+      <div *ngIf="select==3">
+        <h1 style="background-color:#ccc;text-align: center;">Historial de temperatura aire</h1>
+        <app-his-tempaire></app-his-tempaire>
+      </div>
+      <div *ngIf="select==3">
+        <h1 style="background-color:#ccc;text-align: center;">Historial de calidad aire</h1>
+        <app-his-aire></app-his-aire>
+      </div>
+      <div *ngIf="select==3">
+        <h1 style="background-color:#ccc;text-align: center;">Historial de humedad aire</h1>
+        <app-his-hum></app-his-hum>
+      </div>
+      <div *ngIf="select==3">
+        <h1 style="background-color:#ccc;text-align: center;">Historial de humedad suelo</h1>
+        <app-his-humsuelo></app-his-humsuelo>
+      </div>
+  </section>
+
+</div>
+  <!-- <app-contacto></app-contacto>
+
+
+  <app-notes></app-notes>
+
+
+  <app-calendary></app-calendary>
+
+  <app-permissions></app-permissions> -->

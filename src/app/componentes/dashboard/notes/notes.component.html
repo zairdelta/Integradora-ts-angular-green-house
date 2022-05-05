@@ -1,0 +1,45 @@
+
+
+<div class="container">
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <i class="fa-solid fa-plus"></i>
+  </button>
+  <button type="button" style="margin-left:5px" class="btn btn-primary" (click)="getnotes()">
+    <i class="fa-solid fa-arrow-rotate-right"></i>
+  </button>
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">ADD NOTE</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Title</label>
+            <input [(ngModel)]="note.title"  type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Note</label>
+            <textarea [(ngModel)]="note.note"  class="form-control" placeholder="Note" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button (click)="guardarnote()" type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div *ngFor="let note of notes"  id="notas" class="card" style="width: 18rem;">
+
+  <div  class="card-body">
+    <h5 class="card-title">{{note.title}} ({{note.date}})</h5>
+    <p class="card-text">{{note.note}}</p>
+    <a (click)="deleteNote(note._id)"  class="btn btn-danger">Delete</a>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="container col-md-6" style="margin-top: 20px;">
+    <div class="" style="color:white ;text-align: center;">
+        <div class="card-header">
+            <h3>CONTACTO</h3>
+        </div>
+        <div class="card-body">
+            <form id="formconini" action="">
+                <div class="form-group">
+
+                    <label for="">Nombre:</label>
+                    <input type="text" placeholder="Ingresa tu Nombre" class="form-control" [(ngModel)]="conc.nombre" name="titulo">
+                </div>
+                <div class="form-group">
+
+                    <label for="">Email:</label>
+                    <input type="text" class="form-control" placeholder="Ingresa tu Email" [(ngModel)]="conc.email" name="descripcion">
+                </div>
+                <div class="form-group">
+
+                    <label for="">Mensaje:</label>
+                    <textarea style="resize:none" type="text" rows="3" placeholder="Ingresa tu Mensaje"  class="form-control" [(ngModel)]="conc.mensaje" name="descripcion"></textarea>
+                </div>
+
+
+
+
+                <button class="btn btn-success col-sm-12" style="margin-top: 20px;" (click)="guardarcontacto()">Enviar</button>
+
+
+            </form>
+        </div>
+    </div>
+</div>
